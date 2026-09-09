@@ -70,7 +70,7 @@ const pair = await getRate('USD', 'MVR', { apiKey: 'art_live_...' });
 {
   bank: 'mma',
   name: 'Maldives Monetary Authority',
-  rate_date: '2026-09-07',   // Maldives Monetary Authority's own publication date
+  rate_date: '2026-09-09',   // Maldives Monetary Authority's own publication date
   source: 'USD',
   target: 'MVR',
   rate: 15.42,
@@ -98,7 +98,7 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'mma',
   name: 'Maldives Monetary Authority',
-  rate_date: '2026-09-07',
+  rate_date: '2026-09-09',
   rates: [
     { "base": "USD", "quote": "MVR", "type": "reference", "value": 15.42 },
     // … the rest of the published table (1 currency vs MVR)
@@ -140,7 +140,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'maldives-monetary-authority-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'MVR', from: '2026-01-01', to: '2026-09-07' },
+  { source: 'USD', target: 'MVR', from: '2026-01-01', to: '2026-09-09' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -153,11 +153,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'MVR',
   from: '2026-01-01',
-  to: '2026-09-07',
+  to: '2026-09-09',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-09-07', rate: 15.42, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-09-09', rate: 15.42, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
@@ -235,6 +235,14 @@ getRate('USD', 'MVR', { apiKey: 'art_live_...' }).then((pair) => console.log(pai
 | `getLatestRates({ apiKey })` | Free | The central bank's full latest published table |
 | `getRatesForDate(date, { apiKey, source?, target? })` | Paid | The official table (or one pair) for a YYYY-MM-DD date |
 | `getHistory({ symbol \| source+target, from?, to? }, { apiKey })` | Paid | Daily series since 2011 |
+
+## 📥 Bulk data (no key)
+
+Need the whole archive rather than an API call? The same published tables are mirrored daily as open data:
+
+- Hugging Face: [AllRates/central-bank-exchange-rates](https://huggingface.co/datasets/AllRates/central-bank-exchange-rates) — one CSV per institution (`rates/mma.csv`)
+- Kaggle: [allratestoday/central-bank-exchange-rates](https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+- CDN JSON: `https://cdn.jsdelivr.net/gh/AllRates-Today/central-bank-exchange-rates@main/data/mma/latest.json`
 
 ## 🔗 Links
 
