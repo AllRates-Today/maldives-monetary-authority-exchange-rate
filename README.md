@@ -85,7 +85,7 @@ const pair = await getRate('USD', 'MVR', { apiKey: 'art_live_...' });
 {
   bank: 'mma',
   name: 'Maldives Monetary Authority',
-  rate_date: '2026-09-27',   // Maldives Monetary Authority's own publication date
+  rate_date: '2026-10-06',   // Maldives Monetary Authority's own publication date
   source: 'USD',
   target: 'MVR',
   rate: 15.42,
@@ -113,7 +113,7 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'mma',
   name: 'Maldives Monetary Authority',
-  rate_date: '2026-09-27',
+  rate_date: '2026-10-06',
   rates: [
     { "base": "USD", "quote": "MVR", "type": "reference", "value": 15.42 },
     // … the rest of the published table (1 currency vs MVR)
@@ -155,7 +155,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'maldives-monetary-authority-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'MVR', from: '2026-01-01', to: '2026-09-27' },
+  { source: 'USD', target: 'MVR', from: '2026-01-01', to: '2026-10-06' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -168,11 +168,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'MVR',
   from: '2026-01-01',
-  to: '2026-09-27',
+  to: '2026-10-06',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-09-27', rate: 15.42, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-10-06', rate: 15.42, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
