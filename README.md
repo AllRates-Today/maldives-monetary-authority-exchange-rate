@@ -47,7 +47,7 @@ The image is rendered live from the keyless endpoint above, so it follows the ce
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-22 by Maldives Monetary Authority — 1 rate. Updated 2026-10-22.</summary>
+<summary>Table as text: published 2026-10-25 by Maldives Monetary Authority — 1 rate. Updated 2026-10-25.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
